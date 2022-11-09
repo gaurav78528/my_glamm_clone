@@ -1,0 +1,16 @@
+.item-card {
+  /* width: 70%; */
+  /* margin: auto; */
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 30px 25px;
+}
+.item-card > div > h5 {
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+ /* {<Container>
+        <NavLink to="/">HOME</NavLink>/<NavLink to="/makeup">MAKEUP</NavLink>/
+        <NavLink to="/makeup/lips">LIP MAKEUP</NavLink>/
+        <NavLink to="makeup/lips/lipstick">LIPSTICKS</NavLink>
+      /* </Container>  */
