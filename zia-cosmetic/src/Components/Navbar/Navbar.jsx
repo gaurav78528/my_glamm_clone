@@ -26,7 +26,7 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <>
+    <Box position="sticky" top="0" zIndex="1" w="100%">
       {/* <------------------------------- HEADER   ----------------------------------->  */}
       <Flex px="10%" bgColor="#fee8e8">
         <Flex alignItems="center" justifyContent="center" gap="10px">
@@ -371,7 +371,7 @@ const Navbar = () => {
           </ul>
         </Box>
       </VStack>
-    </>
+    </Box>
   );
 };
 

@@ -27,6 +27,9 @@ li {
 
 .nav_items li:hover ul {
   display: block;
+  /* opacity: 1; */
+  z-index: 1;
+  background-color: #ffffff;
   /* background-image: none; */
 }
 .nav_items > li:hover {
@@ -40,7 +43,7 @@ li {
   width: 100%;
   background-color: #ffffff;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-  opacity: 1;
+  /* opacity: 1; */
 }
 .mega-menu > ul {
   justify-content: flex-start;
