@@ -1,4 +1,6 @@
 import {
+  Alert,
+  AlertIcon,
   Box,
   Breadcrumb,
   BreadcrumbItem,
@@ -45,6 +47,16 @@ const Makeup = () => {
     return (
       <Center mt="60px">
         <Spinner size="xl" speed="0.7s" />
+      </Center>
+    );
+  }
+  if (error) {
+    return (
+      <Center>
+        <Alert status="error" py="50px" px="40%">
+          <AlertIcon />
+          Opps!! Something Went Wrong.
+        </Alert>
       </Center>
     );
   }
