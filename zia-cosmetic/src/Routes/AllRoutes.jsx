@@ -8,18 +8,122 @@ import MyCosmeticStudio from "./MyCosmeticStudio";
 import Offers from "./Offers";
 import Lipstick from "./Lipstick";
 import Lips from "./Lips";
+import EyeLiner from "./Eyeliner";
+import Eyes from "./Eyes";
+import Nails from "./Nails";
+import Face from "./Face";
+import SingleUserPage from "../Components/SingleUserPage";
 
+import Checkout from "./Checkout";
+
+let routes = [
+  {
+    id: 1,
+    path: "/",
+    element: <Home />,
+  },
+  {
+    id: 2,
+    path: "/makeup",
+    element: <Makeup />,
+  },
+  {
+    id: 3,
+    path: "/skincare",
+    element: <Skincare />,
+  },
+  {
+    id: 4,
+    path: "/rewards",
+    element: <Rewards />,
+  },
+  {
+    id: 5,
+    path: "/cosmeticstudio",
+    element: <MyCosmeticStudio />,
+  },
+  {
+    id: 6,
+    path: "/offers",
+    element: <Offers />,
+  },
+  {
+    id: 7,
+    path: "/makeup/lips",
+    element: <Lips />,
+  },
+  {
+    id: 8,
+    path: "/makeup/lips/lipstick",
+    element: <Lipstick />,
+  },
+  {
+    id: 9,
+    path: "/makeup/eyes",
+    element: <Eyes />,
+  },
+  {
+    id: 10,
+    path: "/makeup/eyes/eyeliner",
+    element: <EyeLiner />,
+  },
+  {
+    id: 11,
+    path: "/makeup/nails",
+    element: <Nails />,
+  },
+  {
+    id: 12,
+    path: "/makeup/face",
+    element: <Face />,
+  },
+  {
+    id: 13,
+    path: "/makeup/:id",
+    element: <SingleUserPage />,
+  },
+  {
+    id: 14,
+    path: "/makeup/lips/:id",
+    element: <SingleUserPage />,
+  },
+  {
+    id: 15,
+    path: "/makeup/eyes/:id",
+    element: <SingleUserPage />,
+  },
+  {
+    id: 16,
+    path: "/makeup/face/:id",
+    element: <SingleUserPage />,
+  },
+  {
+    id: 17,
+    path: "/makeup/nails/:id",
+    element: <SingleUserPage />,
+  },
+  {
+    id: 18,
+    path: "/checkout",
+    element: <Checkout />,
+  },
+  {
+    id: 19,
+    path: "/makeup/eyes/eyeliner/:id",
+    element: <SingleUserPage />,
+  },
+  {
+    id: 20,
+    path: "/makeup/lips/lipstick/:id",
+    element: <SingleUserPage />,
+  },
+];
 const AllRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<Home />}></Route>
-      <Route path="/makeup" element={<Makeup />}></Route>
-      <Route path="/skincare" element={<Skincare />}></Route>
-      <Route path="/rewards" element={<Rewards />}></Route>
-      <Route path="/cosmeticstudio" element={<MyCosmeticStudio />}></Route>
-      <Route path="/offers" element={<Offers />}></Route>
-      <Route path="/makeup/lips" element={<Lips />}></Route>
-      <Route path="/makeup/lips/lipstick" element={<Lipstick />}></Route>
+      {routes.map(({ path, element, id }) => {
+        return <Route key={id} path={path} element={element}></Route>;
+      })}
     </Routes>
   );
 };

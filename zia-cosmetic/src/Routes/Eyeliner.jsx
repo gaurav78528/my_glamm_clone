@@ -20,16 +20,17 @@
 // import axios from "axios";
 // import { useState } from "react";
 // import { useEffect } from "react";
+// import Navbar from "../Components/Navbar/Navbar";
 
 // function getProducts() {
 //   return axios.get(`https://makeup-api.herokuapp.com/api/v1/products.json`, {
 //     params: {
-//       product_type: "lipstick",
+//       product_type: "eyeliner",
 //     },
 //   });
 // }
 
-// const Lips = () => {
+// const EyeLiner = () => {
 //   const [data, setData] = useState([]);
 //   const [loading, setLoading] = useState(false);
 //   const [error, setError] = useState(false);
@@ -66,6 +67,7 @@
 //   }
 //   return (
 //     <>
+//       <Navbar />
 //       <Divider />
 //       <Flex w="70%" m="auto" justifyContent="center" py="20px">
 //         <Breadcrumb>
@@ -78,14 +80,20 @@
 //           </BreadcrumbItem>
 
 //           <BreadcrumbItem isCurrentPage>
-//             <BreadcrumbLink href="/makeup/lips">LIP MAKEUP</BreadcrumbLink>
+//             <BreadcrumbLink href="/makeup/eyes">EYE MAKEUP</BreadcrumbLink>
+//           </BreadcrumbItem>
+
+//           <BreadcrumbItem isCurrentPage>
+//             <BreadcrumbLink href="/makeup/eyes/eyeliner">
+//               EYE LINER
+//             </BreadcrumbLink>
 //           </BreadcrumbItem>
 //         </Breadcrumb>
 //       </Flex>
 //       <Divider w="70%" m="auto" />
 
 //       <Heading as="h1" size="2xl" textAlign="center" my="40px">
-//         LIP MAKEUP
+//         EYELINER
 //       </Heading>
 
 //       <Center w="70%" m="auto">
@@ -123,25 +131,26 @@
 //   );
 // };
 
-// export default Lips;
+// export default EyeLiner;
 
 import React from "react";
-import Navbar from "../Components/Navbar/Navbar";
 import Common from "../Components/Common";
+import Common3 from "../Components/Common3";
+import Navbar from "../Components/Navbar/Navbar";
 
-const Lips = () => {
+const Eyeliner = () => {
   return (
     <>
       <Navbar />
-      <Common
-        product_type="lipstick"
-        heading="LIP MAKEUP"
+      <Common3
+        product_type="eyeliner"
+        heading="EYELINER"
         type="/makeup"
-        category="/lips"
+        category="/eyes"
+        subcategory="/eyeliner"
       />
-      ;
     </>
   );
 };
 
-export default Lips;
+export default Eyeliner;

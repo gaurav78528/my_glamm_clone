@@ -51,7 +51,7 @@ export const data = {
       id: 1,
       imgSrc: "https://files.myglamm.com/site-images/original/SKin-1-2.png",
       category: "Skin",
-      link: "/",
+      link: "/makeup/skin",
     },
     {
       id: 2,
@@ -70,19 +70,19 @@ export const data = {
       id: 4,
       imgSrc: "https://files.myglamm.com/site-images/original/Eyes-4.png",
       category: "Eyes",
-      link: "/",
+      link: "/makeup/eyes",
     },
     {
       id: 5,
       imgSrc: "https://files.myglamm.com/site-images/original/Face-5.png",
       category: "Face",
-      link: "/",
+      link: "/makeup/face",
     },
     {
       id: 6,
       imgSrc: "https://files.myglamm.com/site-images/original/Nails-1.png",
       category: "Nails",
-      link: "/",
+      link: "/makeup/nails",
     },
     {
       id: 7,

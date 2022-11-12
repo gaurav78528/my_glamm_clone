@@ -130,8 +130,11 @@ const Navbar = () => {
                   <Heading as="h5" size="sm">
                     EYES
                   </Heading>
+
                   <li>Eye Shadow</li>
-                  <li>Eyeliner</li>
+                  <li>
+                    <NavLink to="makeup/eyes/eyeliner">EyeLiner</NavLink>
+                  </li>
                   <li>Eyebrows</li>
                   <li>Glitter</li>
                   <li>Mascara</li>

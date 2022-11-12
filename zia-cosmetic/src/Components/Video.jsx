@@ -9,9 +9,9 @@ const Video = () => {
         height="500px"
         src="https://www.youtube.com/embed/GdcxfyKNiDg"
         title="YouTube video player"
-        frameborder="0"
+        frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
+        allowFullScreen
       ></iframe>
     </Box>
   );
