@@ -1,9 +1,11 @@
 import { Box, Divider, Heading, Text } from "@chakra-ui/react";
 import React from "react";
+import Navbar from "../Components/Navbar/Navbar";
 
 const Rewards = () => {
   return (
     <>
+      <Navbar />
       <Box w="70%" m="auto">
         <Heading
           as="h1"

@@ -24,12 +24,12 @@
 // function getProducts() {
 //   return axios.get(`https://makeup-api.herokuapp.com/api/v1/products.json`, {
 //     params: {
-//       product_type: "lipstick",
+//       product_type: "foundation",
 //     },
 //   });
 // }
 
-// const Lips = () => {
+// const Face = () => {
 //   const [data, setData] = useState([]);
 //   const [loading, setLoading] = useState(false);
 //   const [error, setError] = useState(false);
@@ -77,15 +77,15 @@
 //             <BreadcrumbLink href="/makeup">MAKEUP</BreadcrumbLink>
 //           </BreadcrumbItem>
 
-//           <BreadcrumbItem isCurrentPage>
-//             <BreadcrumbLink href="/makeup/lips">LIP MAKEUP</BreadcrumbLink>
+//           <BreadcrumbItem>
+//             <BreadcrumbLink href="/makeup/face">FACE MAKEUP</BreadcrumbLink>
 //           </BreadcrumbItem>
 //         </Breadcrumb>
 //       </Flex>
 //       <Divider w="70%" m="auto" />
 
 //       <Heading as="h1" size="2xl" textAlign="center" my="40px">
-//         LIP MAKEUP
+//         FACE MAKEUP
 //       </Heading>
 
 //       <Center w="70%" m="auto">
@@ -123,25 +123,24 @@
 //   );
 // };
 
-// export default Lips;
-
+// export default Face;
 import React from "react";
-import Navbar from "../Components/Navbar/Navbar";
 import Common from "../Components/Common";
+import Navbar from "../Components/Navbar/Navbar";
 
-const Lips = () => {
+const Face = () => {
   return (
     <>
       <Navbar />
       <Common
-        product_type="lipstick"
-        heading="LIP MAKEUP"
+        product_type="foundation"
+        heading="FACE MAKEUP"
         type="/makeup"
-        category="/lips"
+        category="/face"
+       
       />
-      ;
     </>
   );
 };
 
-export default Lips;
+export default Face;
