@@ -8,6 +8,7 @@ import GridItemRounded from "../Components/GridItem/GridItemRounded";
 import Video from "../Components/Video";
 import Navbar from "../Components/Navbar/Navbar";
 import AllRoutes from "./AllRoutes";
+import Footer from "../Components/Footer/Footer";
 const Home = () => {
   // console.log("home");
   return (
@@ -24,20 +25,24 @@ const Home = () => {
             />
           </Center>
         </NavLink>
-        <Image
-          src="https://files.myglamm.com/site-images/original/GS2240x614_2.jpg"
-          alt="img"
-          mt="40px"
-          mb="80px"
-        />
-        <GridItemSpotlight heading="IN THE SPOTLIGHT" data={data.spotlight} />
-        <Center w="80%" m="auto">
+        <NavLink to="/makeup">
           <Image
-            src="https://files.myglamm.com/site-images/original/make2240X614.jpg"
+            src="https://files.myglamm.com/site-images/original/GS2240x614_2.jpg"
             alt="img"
-            my="60px"
+            mt="40px"
+            mb="80px"
           />
-        </Center>
+        </NavLink>
+        <GridItemSpotlight heading="IN THE SPOTLIGHT" data={data.spotlight} />
+        <NavLink to="/makeup">
+          <Center w="80%" m="auto">
+            <Image
+              src="https://files.myglamm.com/site-images/original/make2240X614.jpg"
+              alt="img"
+              my="60px"
+            />
+          </Center>
+        </NavLink>
         <GridItemSpotlight
           heading="LATEST GLAMM LAUNCHES"
           data={data.latestLaunches}
@@ -126,7 +131,8 @@ const Home = () => {
             alt="disclaimer"
           />
         </Center>
-        {/* <Video /> */}
+        <Video />
+        <Footer />
       </Box>
     </>
   );

@@ -20,7 +20,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 
 function getProducts(product_type) {
-  return axios.get(`http://localhost:3004/products`, {
+  return axios.get(`http://localhost:3004/products?_limit=30`, {
     params: {
       product_type: product_type,
     },

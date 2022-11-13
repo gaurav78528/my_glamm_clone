@@ -27,6 +27,7 @@ import Navbar from "./Navbar/Navbar";
 
 import Cart from "./Cart";
 import { CartContext } from "../Context/CartContext/CartContext";
+import Footer from "./Footer/Footer";
 
 const getSingleProduct = (id) => {
   return axios.get(`http://localhost:3004/products`, {
@@ -75,64 +76,6 @@ function SingleProductPage() {
   };
   //  ////////////////////////////////////////////////////////////////////////////////
 
-  // const params = useParams(1);
-  // console.log(params);
-  // const navigateBag = useNavigate();
-  // const navigateWishlist = useNavigate();
-  // const [loading, setLoading] = useState(true);
-  // const [error, setError] = useState(false);
-  // const [data, setData] = useState(null);
-
-  // Get Data function
-  // useEffect(() => {
-  //   // setLoading(true);
-  //   getUserById(params.id)
-  //     .then((res) => {
-  //       // setData(res);
-  //       console.log(res);
-  //       // setLoading(false);
-  //       // setError(false);
-  //     })
-  //     .catch((err) => {
-  //       // setLoading(false);
-  //       // setError(true);
-  //     });
-  // }, []);
-
-  // Add To Cart Post function-------------------------------
-  // const addToCart = () => {
-  //   // setLoading(true);
-  //   fetch("http://localhost:4000/cart", {
-  //     method: "POST",
-  //     body: JSON.stringify(data),
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //   })
-  //     .then((res) => res.json())
-  //     .then((res) => {
-  //       // setLoading(false);
-  //       // navigateBag("/bag");
-  //     });
-  // };
-
-  // Add To Cart function-------------------------------
-  // const addToWishlist = () => {
-  //   // setLoading(true);
-  //   fetch("http://localhost:4000/wishlist", {
-  //     method: "POST",
-  //     body: JSON.stringify(data),
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //   })
-  //     .then((res) => res.json())
-  //     .then((res) => {
-  //       // setLoading(false);
-  //       // navigateWishlist("/wishlist");
-  //     });
-  // };
-
   if (loading) {
     return (
       <Center mt="60px">
@@ -155,12 +98,12 @@ function SingleProductPage() {
     <>
       <Navbar />
 
-      <Box w="80%" m="auto" border="2px dashed blue">
+      <Box w="80%" m="auto" mt="30px" p="10px">
         <HStack spacing="24px">
           <Flex
             w="40%"
             h="500px"
-            border="1px solid red"
+            // border="1px solid red"
             direction="column"
             justifyContent="center"
           >
@@ -169,7 +112,7 @@ function SingleProductPage() {
               alt="img"
               h="400px"
               w="100%"
-              border="1px solid green"
+              // border="1px solid green"
             />
             <Flex gap="15px" justifyContent="center" mt="10px">
               <FaPinterestP fontSize="25px" />
@@ -181,7 +124,7 @@ function SingleProductPage() {
             direction="column"
             w="60%"
             h="auto"
-            border="1px solid red"
+            // border="1px solid red"
             gap="20px"
           >
             <Heading as="h2" size="md">
@@ -258,6 +201,7 @@ function SingleProductPage() {
           </Flex>
         </HStack>
       </Box>
+      <Footer />
     </>
   );
 

@@ -1,5 +1,6 @@
 import { Box, Divider, Heading, Text } from "@chakra-ui/react";
 import React from "react";
+import Footer from "../Components/Footer/Footer";
 import Navbar from "../Components/Navbar/Navbar";
 
 const Rewards = () => {
@@ -289,6 +290,7 @@ const Rewards = () => {
           two months prior to your birthdate.
         </Text>
       </Box>
+      <Footer />
     </>
   );
 };

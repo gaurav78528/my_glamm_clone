@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { haircareData } from "./data";
 import "./navbar.css";
 import logo from "./logo.png";
@@ -23,8 +23,10 @@ import { IoStorefrontOutline, IoGift, IoSearch } from "react-icons/io5";
 import { HiOutlineShoppingBag, HiOutlineUser } from "react-icons/hi";
 
 import { NavLink } from "react-router-dom";
+import { CartContext } from "../../Context/CartContext/CartContext";
 
 const Navbar = () => {
+  const { cartItems } = useContext(CartContext);
   return (
     <Box position="sticky" top="0" zIndex="1" w="100%">
       {/* <------------------------------- HEADER   ----------------------------------->  */}
@@ -72,7 +74,29 @@ const Navbar = () => {
           </Flex>
           <Spacer />
           <Flex gap={8}>
-            <HiOutlineShoppingBag size={40} />
+            <Box position="relative">
+              <HiOutlineShoppingBag size={40} />
+            </Box>
+
+            {cartItems.length !== 0 ? (
+              <Text
+                position="absolute"
+                right="16%"
+                top="24%"
+                bgColor="#111"
+                color="#fff"
+                borderRadius="50%"
+                fontSize="20px"
+                px="10px"
+                fontWeight={600}
+                // p="10px"
+              >
+                {cartItems.length}
+              </Text>
+            ) : (
+              <Text></Text>
+            )}
+
             <Center height="50px">
               <Divider orientation="vertical" colorScheme="black" />
             </Center>
@@ -95,7 +119,7 @@ const Navbar = () => {
                     {/* https://makeup-api.herokuapp.com/api/v1/products.json?product_category=lipstick&product_type=lipstick */}
                   </Heading>
                   <li>
-                    <NavLink to="makeup/lips/lipstick">Lipstick</NavLink>
+                    <NavLink to="/makeup/lips/lipstick">Lipstick</NavLink>
                   </li>
                   <li>Crayon Lipstick</li>
                   <li>Hi-Shine Lipstick</li>
