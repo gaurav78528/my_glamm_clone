@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../Components/Navbar/Navbar";
 import Common from "../Components/Common";
+import Footer from "../Components/Footer/Footer";
 
 const Lips = () => {
   return (
@@ -12,7 +13,7 @@ const Lips = () => {
         type="/makeup"
         category="/lips"
       />
-      ;
+       <Footer/>
     </>
   );
 };

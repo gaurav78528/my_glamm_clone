@@ -1,5 +1,6 @@
 import React from "react";
 import Common3 from "../Components/Common3";
+import Footer from "../Components/Footer/Footer";
 import Navbar from "../Components/Navbar/Navbar";
 
 const Eyeliner = () => {
@@ -13,6 +14,7 @@ const Eyeliner = () => {
         category="/eyes"
         subcategory="/eyeliner"
       />
+    <Footer/>
     </>
   );
 };
