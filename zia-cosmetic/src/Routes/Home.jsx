@@ -9,6 +9,7 @@ import Video from "../Components/Video";
 import Navbar from "../Components/Navbar/Navbar";
 import AllRoutes from "./AllRoutes";
 const Home = () => {
+  // console.log("home");
   return (
     <>
       <Navbar />
@@ -125,7 +126,7 @@ const Home = () => {
             alt="disclaimer"
           />
         </Center>
-        <Video />
+        {/* <Video /> */}
       </Box>
     </>
   );
