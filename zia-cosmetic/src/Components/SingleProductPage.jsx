@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
-import { HiOutlineShoppingBag } from "react-icons/hi2";
+
 import {
   Accordion,
   AccordionButton,
@@ -11,7 +11,6 @@ import {
   Alert,
   AlertIcon,
   Box,
-  Button,
   Center,
   Divider,
   Flex,
@@ -20,52 +19,49 @@ import {
   Image,
   Spinner,
   Text,
-  Drawer,
-  DrawerBody,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerOverlay,
-  DrawerContent,
-  DrawerCloseButton,
-  useDisclosure,
 } from "@chakra-ui/react";
 import { FaTwitter, FaFacebookF, FaPinterestP } from "react-icons/fa";
 import { CiDiscount1 } from "react-icons/ci";
-import { BsArrowRight } from "react-icons/bs";
-import Navbar from "./Navbar/Navbar";
-// import CardItemCard from "../Components/CartItemCard";
-import CartItemCard from "../Components/CartItemCard";
-// import { HiOutlineShoppingBag } from "react-icons/hi2";
 
-const getSingleUser = (id) => {
+import Navbar from "./Navbar/Navbar";
+
+import Cart from "./Cart";
+import { CartContext } from "../Context/CartContext/CartContext";
+
+const getSingleProduct = (id) => {
   return axios.get(`http://localhost:3004/products`, {
     params: {
       id: id,
     },
   });
 };
-function SingleUserPage() {
+
+// function getUserById(id) {
+//   return fetch(
+//     // url
+//     `http://localhost:3004/cart/${id}`
+//   ).then((res) => res.json());
+// }
+
+function SingleProductPage() {
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
-  const [size, setSize] = React.useState("");
-  const [cartItem, setCartItem] = useState([]);
 
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const { description, name, category, price_sign, price, image_link } = data;
-  console.log(data);
-  // console.log(cartItem);
+  const { name, category, price_sign, price, image_link } = data;
+  // console.log(data);
 
   const { id } = useParams();
-  const navigate = useNavigate();
+  const { cartItems } = useContext(CartContext);
+  // console.log(cartData);
 
   useEffect(() => {
-    handleGetUsers(id);
+    handleGetProducts(id);
   }, [id]);
-
-  const handleGetUsers = (id) => {
+  // console.log("hello");
+  const handleGetProducts = (id) => {
     setLoading(true);
-    getSingleUser(id)
+    getSingleProduct(id)
       .then((res) => {
         // console.log(res);
         setData(res.data[0]);
@@ -77,24 +73,66 @@ function SingleUserPage() {
         console.log(err);
       });
   };
+  //  ////////////////////////////////////////////////////////////////////////////////
 
-  const handleAddToBag = (data) => {
-    //code here
-    onOpen();
-    axios
-      .post(`http://localhost:3004/cart`, { data })
-      .then((res) => console.log(res));
-  };
-  const getCartItems = () => {
-    // onOpen();
-    // handleAddToBag(data);
-    axios.get(`http://localhost:3004/cart`).then((res) => {
-      // setCartItem(res.data);
-      // console.log(res);
-    });
-  };
+  // const params = useParams(1);
+  // console.log(params);
+  // const navigateBag = useNavigate();
+  // const navigateWishlist = useNavigate();
+  // const [loading, setLoading] = useState(true);
+  // const [error, setError] = useState(false);
+  // const [data, setData] = useState(null);
 
-  // console.log(userDetails);
+  // Get Data function
+  // useEffect(() => {
+  //   // setLoading(true);
+  //   getUserById(params.id)
+  //     .then((res) => {
+  //       // setData(res);
+  //       console.log(res);
+  //       // setLoading(false);
+  //       // setError(false);
+  //     })
+  //     .catch((err) => {
+  //       // setLoading(false);
+  //       // setError(true);
+  //     });
+  // }, []);
+
+  // Add To Cart Post function-------------------------------
+  // const addToCart = () => {
+  //   // setLoading(true);
+  //   fetch("http://localhost:4000/cart", {
+  //     method: "POST",
+  //     body: JSON.stringify(data),
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //   })
+  //     .then((res) => res.json())
+  //     .then((res) => {
+  //       // setLoading(false);
+  //       // navigateBag("/bag");
+  //     });
+  // };
+
+  // Add To Cart function-------------------------------
+  // const addToWishlist = () => {
+  //   // setLoading(true);
+  //   fetch("http://localhost:4000/wishlist", {
+  //     method: "POST",
+  //     body: JSON.stringify(data),
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //   })
+  //     .then((res) => res.json())
+  //     .then((res) => {
+  //       // setLoading(false);
+  //       // navigateWishlist("/wishlist");
+  //     });
+  // };
+
   if (loading) {
     return (
       <Center mt="60px">
@@ -113,10 +151,6 @@ function SingleUserPage() {
     );
   }
 
-  const handleClick = (newSize) => {
-    setSize(newSize);
-    onOpen();
-  };
   return (
     <>
       <Navbar />
@@ -157,85 +191,10 @@ function SingleUserPage() {
             <Text>
               {price_sign} {"  "} {price}
             </Text>{" "}
-            {/* price_sign price */}
             <Text>(MRP incl. of all taxes)</Text>
             <Box>
-              <Button
-                colorScheme="blackAlpha"
-                size="lg"
-                bgColor="black"
-                borderRadius="none"
-                gap="10px"
-                // onClick={() => handleClick("md")}
-                // onClick={() => getCartItems()}
-                onClick={() => handleAddToBag(data)}
-              >
-                <HiOutlineShoppingBag fontSize="30px" /> ADD TO BAG
-              </Button>
-              <Drawer onClose={onClose} isOpen={isOpen} size="md">
-                <DrawerOverlay />
-
-                <DrawerContent>
-                  <DrawerCloseButton />
-                  <DrawerHeader fontSize="30px" py="40px" bgColor="gray.100">
-                    <Flex alignItems="center" gap="20px">
-                      <HiOutlineShoppingBag fontSize="50px" />
-                      {`${size} MY BAG (${cartItem.length})`}
-                    </Flex>
-                  </DrawerHeader>
-                  <DrawerBody>
-                    <Box>
-                      {cartItem.map((item) => {
-                        return <CartItemCard data={data} />;
-                      })}
-                    </Box>
-                    <Box
-                      // p="25px"
-                      position="fixed"
-                      bottom="0px"
-                      right="0px"
-                      bgColor="#fff"
-                      w="100%"
-                      zIndex="1"
-                    >
-                      <Divider />
-                      <Box p="25px">
-                        <Text>
-                          <b>Congrats! </b>You're eligible for free gift
-                          <br />
-                          <Button variant="ghost" w="100%">
-                            <b>Please select.</b>
-                          </Button>
-                        </Text>
-                        <Flex
-                          justifyContent="space-between"
-                          alignItems="center"
-                        >
-                          <Text>Total Amount</Text>
-                          <Text>Rs 354</Text>
-                        </Flex>
-                      </Box>
-                      <Flex
-                        w="100%"
-                        bgColor="black"
-                        p="15px"
-                        justifyContent="space-between"
-                        alignItems="center"
-                      >
-                        <Button
-                          colorScheme="blackAlpha"
-                          borderRadius="none"
-                          fontSize="24px"
-                          onClick={() => navigate("/checkout")}
-                        >
-                          Checkout
-                        </Button>
-                        <BsArrowRight fontSize="25px" color="#fff" />
-                      </Flex>
-                    </Box>
-                  </DrawerBody>
-                </DrawerContent>
-              </Drawer>
+              {/* ======================CALLED CART COMPONENT HERE======================================= */}
+              <Cart data={data} />
             </Box>
             <Text p="10px" bgColor="gray.100">
               You will receive <b>cashback worth ₹40</b> as myglammPOINTS on
@@ -301,6 +260,8 @@ function SingleUserPage() {
       </Box>
     </>
   );
+
+  // return;
 }
 
-export default SingleUserPage;
+export default SingleProductPage;

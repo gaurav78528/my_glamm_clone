@@ -12,7 +12,7 @@ import EyeLiner from "./Eyeliner";
 import Eyes from "./Eyes";
 import Nails from "./Nails";
 import Face from "./Face";
-import SingleUserPage from "../Components/SingleUserPage";
+import SingleProductPage from "../Components/SingleProductPage";
 
 import Checkout from "./Checkout";
 
@@ -80,27 +80,27 @@ let routes = [
   {
     id: 13,
     path: "/makeup/:id",
-    element: <SingleUserPage />,
+    element: <SingleProductPage />,
   },
   {
     id: 14,
     path: "/makeup/lips/:id",
-    element: <SingleUserPage />,
+    element: <SingleProductPage />,
   },
   {
     id: 15,
     path: "/makeup/eyes/:id",
-    element: <SingleUserPage />,
+    element: <SingleProductPage />,
   },
   {
     id: 16,
     path: "/makeup/face/:id",
-    element: <SingleUserPage />,
+    element: <SingleProductPage />,
   },
   {
     id: 17,
     path: "/makeup/nails/:id",
-    element: <SingleUserPage />,
+    element: <SingleProductPage />,
   },
   {
     id: 18,
@@ -110,12 +110,12 @@ let routes = [
   {
     id: 19,
     path: "/makeup/eyes/eyeliner/:id",
-    element: <SingleUserPage />,
+    element: <SingleProductPage />,
   },
   {
     id: 20,
     path: "/makeup/lips/lipstick/:id",
-    element: <SingleUserPage />,
+    element: <SingleProductPage />,
   },
 ];
 const AllRoutes = () => {
