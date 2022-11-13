@@ -58,3 +58,6 @@ li {
   font-size: 13px;
   font-weight: 500;
 }
+.mega-menu a:hover {
+  color: #fe9696;
+}

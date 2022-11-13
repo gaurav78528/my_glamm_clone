@@ -114,41 +114,88 @@ const Navbar = () => {
 
               <Flex className="mega-menu">
                 <ul>
-                  <Heading as="h5" size="sm">
-                    LIPS
-                    {/* https://makeup-api.herokuapp.com/api/v1/products.json?product_category=lipstick&product_type=lipstick */}
-                  </Heading>
+                  <NavLink to="/makeup/lips">
+                    <Heading as="h5" size="sm">
+                      LIPS
+                    </Heading>
+                  </NavLink>
                   <li>
                     <NavLink to="/makeup/lips/lipstick">Lipstick</NavLink>
                   </li>
-                  <li>Crayon Lipstick</li>
-                  <li>Hi-Shine Lipstick</li>
-                  <li>Matte Lipstick</li>
-                  <li>Lip Gloss</li>
-                  <li>Lip Liner</li>
-                  <li>Lip Balm</li>
-                  <li>Lip Glitter</li>
-                  <li>Lip Stain</li>
-                  <li>Lipstick Set</li>
-                  <li>Lip Kit</li>
-                  <li>Find Your Lipstick</li>
+                  <NavLink to="/">
+                    <li>Crayon Lipstick</li>
+                  </NavLink>
+                  <NavLink to="/">
+                    <li>Hi-Shine Lipstick</li>
+                  </NavLink>
+                  <NavLink to="/">
+                    <li>Matte Lipstick</li>
+                  </NavLink>
+                  <NavLink to="/">
+                    <li>Lip Gloss</li>
+                  </NavLink>
+                  <NavLink to="/">
+                    <li>Lip Liner</li>
+                  </NavLink>
+                  <NavLink to="/">
+                    <li>Lip Balm</li>
+                  </NavLink>
+                  <NavLink to="/">
+                    <li>Lip Glitter</li>
+                  </NavLink>
+                  <NavLink to="/">
+                    <li>Lip Stain</li>
+                  </NavLink>
+                  <NavLink to="/">
+                    <li>Lipstick Set</li>
+                  </NavLink>
+                  <NavLink to="/">
+                    <li>Lip Kit</li>
+                  </NavLink>
+                  <NavLink to="/">
+                    <li>Find Your Lipstick</li>
+                  </NavLink>
                 </ul>
                 <ul>
                   <Heading as="h5" size="sm">
                     FACE
                   </Heading>
-                  <li>Fixing Powder</li>
-                  <li>Primer</li>
-                  <li>Concealer</li>
-                  <li>Foundation</li>
-                  <li>Compact Powder</li>
-                  <li>Setting Powder</li>
-                  <li>Banana Powder</li>
-                  <li>Sindoor</li>
-                  <li>HighLighter</li>
-                  <li>Blush</li>
-                  <li>Bronzer</li>
-                  <li>Cheek Stain</li>
+                  <NavLink to="/">
+                    <li>Fixing Powder</li>
+                  </NavLink>
+                  <NavLink to="/">
+                    <li>Primer</li>
+                  </NavLink>
+                  <NavLink to="/">
+                    <li>Concealer</li>
+                  </NavLink>
+                  <NavLink to="/">
+                    <li>Foundation</li>
+                  </NavLink>
+                  <NavLink to="/">
+                    <li>Compact Powder</li>
+                  </NavLink>
+                  <NavLink to="/">
+                    <li>Setting Powder</li>
+                  </NavLink>
+                  <NavLink to="/">
+                    <li>Banana Powder</li>
+                  </NavLink>
+                  <NavLink to="/">
+                    <li>Sindoor</li>
+                  </NavLink>
+                  <NavLink to="/">
+                    <li>HighLighter</li>
+                  </NavLink>
+                  <NavLink to="/">
+                    <li>Blush</li>
+                  </NavLink>
+                  <NavLink to="/">
+                    <li>Bronzer</li>
+                  </NavLink>
+                  <NavLink to="/">
+                    <li>Cheek Stain</li>
+                  </NavLink>
                 </ul>
                 <ul>
                   <Heading as="h5" size="sm">
@@ -156,9 +203,11 @@ const Navbar = () => {
                   </Heading>
 
                   <li>Eye Shadow</li>
-                  <li>
-                    <NavLink to="makeup/eyes/eyeliner">EyeLiner</NavLink>
-                  </li>
+
+                  <NavLink to="makeup/eyes/eyeliner">
+                    <li>EyeLiner</li>
+                  </NavLink>
+
                   <li>Eyebrows</li>
                   <li>Glitter</li>
                   <li>Mascara</li>
